@@ -1,0 +1,43 @@
+{
+    "name": "mtc/laravel-payments",
+    "description": "Payment helper for Paypal, Stripe, Bank of Palestine \"BOP\", BILL.PS and CrossPay",
+    "keywords": [
+        "online payments",
+        "paypal",
+        "stripe",
+        "bank of palestine-bop",
+        "bill.ps",
+        "crosspay"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mtc\\LaravelPayments\\": "src/"
+        }
+    },
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "laravel/framework": ">=6.0",
+        "paypal/paypal-checkout-sdk": "1.0.2",
+        "stripe/stripe-php": "^10.10",
+        "ext-json": "*",
+        "ext-curl": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Osama Al-Madhoun",
+            "email": "osama98.stm@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MTC\\Payments\\MTCPaymentsServiceProvider"
+            ],
+            "aliases": {
+                "MTCPayments": "MTC\\Payments\\Facades"
+            }
+        }
+    }
+}
