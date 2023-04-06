@@ -1,5 +1,6 @@
 {
-    "name": "mtc/laravel-payments",
+    "name": "mtc/payments",
+    "license": "MIT",
     "description": "Payment helper for Paypal, Stripe, Bank of Palestine \"BOP\", BILL.PS and CrossPay",
     "keywords": [
         "online payments",
@@ -23,7 +24,7 @@
         "ext-json": "*",
         "ext-curl": "*"
     },
-    "license": "MIT",
+
     "authors": [
         {
             "name": "Osama Al-Madhoun",
