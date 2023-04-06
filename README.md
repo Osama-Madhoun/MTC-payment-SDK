@@ -18,7 +18,7 @@ Payment Helper of Payment Gateways ( PayPal - Stripe - Bank of Palestine "BOP" -
 ## Installation
 
 ```jsx
-composer require mtc/payments
+composer require mtc/laravel-payments
 ```
 
 ## Publish Vendor Files
