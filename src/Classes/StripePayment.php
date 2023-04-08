@@ -55,7 +55,8 @@ class StripePayment extends BaseController implements PaymentInterface
             'unique_id' => $unique_id,
             'item_id' => 1,
             'item_quantity' => 1,
-            'amount' => $this->amount  * 100,
+            'amount' => $this->amount,
+//            'amount' => $this->amount  * 100,
             "currency" => $this->currency,
             'payment_id'=>$unique_id
         ];
