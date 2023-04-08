@@ -16,7 +16,7 @@ class StripePayment extends BaseController implements PaymentInterface
 {
     private $stripe_key;
     private $stripe_secret;
-    private $verify_route_name;
+    public $verify_route_name;
 
 
     public function __construct()
