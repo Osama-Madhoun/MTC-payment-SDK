@@ -36,6 +36,7 @@ class PayPalPayment extends BaseController implements PaymentInterface
 
     /**
      * @param $amount
+     * @param $currency
      * @param null $user_id
      * @param null $user_first_name
      * @param null $user_last_name
@@ -44,9 +45,9 @@ class PayPalPayment extends BaseController implements PaymentInterface
      * @param null $source
      * @return array|Application|RedirectResponse|Redirector
      */
-    public function pay($amount = null, $user_id = null, $user_first_name = null, $user_last_name = null, $user_email = null, $user_phone = null, $source = null)
+    public function pay($amount = null,$currency = null, $user_id = null, $user_first_name = null, $user_last_name = null, $user_email = null, $user_phone = null, $source = null)
     {
-        $this->setPassedVariablesToGlobal($amount,$user_id,$user_first_name,$user_last_name,$user_email,$user_phone,$source);
+        $this->setPassedVariablesToGlobal($amount,$currency,$user_id,$user_first_name,$user_last_name,$user_email,$user_phone,$source);
         $required_fields = ['amount'];
         $this->checkRequiredFields($required_fields, 'PayPal');
 
