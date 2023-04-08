@@ -16,6 +16,7 @@ trait SetRequiredFields
     {
      
         $amount = $this->amount ?? null;
+        $currency = $this->currency ?? null;
         $user_id = $this->user_id ?? null;
         $user_first_name = $this->user_first_name ?? null;
         $user_last_name = $this->user_last_name ?? null;
