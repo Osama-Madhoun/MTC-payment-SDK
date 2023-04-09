@@ -215,8 +215,7 @@ use MTC\Payments\Classes\BillPayment;
 use MTC\Payments\Classes\ThawaniPayment;
 
 ```
-## Payment Gateway Field
-##### [ amount,currency,user_id,user_first_name,user_last_name,user_email,user_phone,source]
+## Payment Gateway Required Field 
             
 | Payment Gateway | Required Field |
 | :--- :       |     :---:     |
