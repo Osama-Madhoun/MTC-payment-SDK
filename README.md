@@ -218,12 +218,12 @@ use MTC\Payments\Classes\ThawaniPayment;
 ## Payment Gateway Required Field 
             
 | Payment Gateway | Required Field |
-| :--- :       |     :---:     |
+| ------ | ------ |
 | **PayPal**   | *amount*     |
 | **Stripe**     | *amount , currency*   |
 | **Bank Of Palestine ( BOP )**    | *amount , currency* |
-| **Bill.ps**     | *amount , currency , user_first_name , user_last_name , user_email , user_phone*|
-| **Thawani**     |  *amount  , user_first_name , user_last_name , user_email , user_phone*|
+| **Bill**     | *amount , currency , user_first_name , user_last_name , user_email , user_phone* |
+| **Thawani**     |  *amount  , user_first_name , user_last_name , user_email , user_phone* |
 
 ## Test Cards
 
