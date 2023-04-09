@@ -53,7 +53,7 @@ class BillPayment extends BaseController implements PaymentInterface
 
         $unique_id = uniqid();
         $apiKey = $this->bill_api_key;
-        $return_url = route($this->verify_route_name, ['payment_id' => $unique_id]);
+        $return_url = route($this->verify_route_name, ['payment' => "bill", 'payment_id' => $unique_id]);
         $email = $this->user_email;     // User Email
         $mobile = $this->user_phone;             // User phone
         $name = $this->user_first_name . ' ' . $this->user_last_name;    //User Name

@@ -36,7 +36,7 @@ class ThawaniPayment extends BaseController implements PaymentInterface
      * @param null $user_email
      * @param null $user_phone
      * @param null $source
-     * @return Application|RedirectResponse|Redirector
+     * @return array
      * @throws MissingPaymentInfoException
      */
     public function pay($amount = null, $currency = null,  $user_id = null, $user_first_name = null, $user_last_name = null, $user_email = null, $user_phone = null, $source = null)
@@ -48,7 +48,7 @@ class ThawaniPayment extends BaseController implements PaymentInterface
         $response = Http::withHeaders([
             'Content-Type' => "application/json",
             "Thawani-Api-Key" => $this->thawani_api_key
-        ])->post($this->thawani_url . '/api/v1/checkout/session', [
+        ])->post($this->thawani_url . 'api/v1/checkout/session', [
             "client_reference_id" => $unique_id,
             "products" => [
                 [
@@ -70,7 +70,7 @@ class ThawaniPayment extends BaseController implements PaymentInterface
         return [
             'payment_id'=>$response['data']['session_id'],
             'html' => "",
-            'redirect_url'=>$this->thawani_url . '/pay/' . $response['data']['session_id'] . "?key=" . $this->thawani_publishable_key
+            'redirect_url'=>$this->thawani_url . 'pay/' . $response['data']['session_id'] . "?key=" . $this->thawani_publishable_key
         ];
 
     }
@@ -81,12 +81,13 @@ class ThawaniPayment extends BaseController implements PaymentInterface
      */
     public function verify(Request $request): array
     {
-        $payment_id = $request->payment_id!=null?$request->payment_id:Cache::get($request['payment_id']);
+//        $payment_id = $request->payment_id!=null?$request->payment_id:Cache::get($request['payment_id']);
+        $payment_id = Cache::get($request['payment_id'])!=null;
         Cache::forget($request['payment_id']);
         $response = Http::withHeaders([
             'content-type' => 'application/json',
             'Thawani-Api-Key' => $this->thawani_api_key
-        ])->get($this->thawani_url . '/api/v1/checkout/session/' . $payment_id)->json();
+        ])->get($this->thawani_url . 'api/v1/checkout/session/' . $payment_id)->json();
 
         if ($response['data']['payment_status'] == "paid") {
             return [

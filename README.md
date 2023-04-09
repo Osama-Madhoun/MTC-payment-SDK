@@ -154,16 +154,22 @@ use MTC\Payments\Classes\PaypalPayment;
 $payment = new PaypalPayment();
 
 //pay function
-$payment->pay(
-	$amount, 
-	$currency = null, 
-	$user_id = null, 
-	$user_first_name = null, 
-	$user_last_name = null, 
-	$user_email = null, 
-	$user_phone = null, 
-	$source = null
-);
+ try {
+        $payment->pay(
+            $amount, 
+            $currency = null, 
+            $user_id = null, 
+            $user_first_name = null, 
+            $user_last_name = null, 
+            $user_email = null, 
+            $user_phone = null, 
+            $source = null
+        );
+        
+        // To show and deal with validation messages, required fields, and error messages for payment gateways
+     } catch (\Exception $e) {
+          dd($e->getMessage());
+     }
 
 //OR you can use
 $payment->setUserId($id)
