@@ -215,6 +215,16 @@ use MTC\Payments\Classes\BillPayment;
 use MTC\Payments\Classes\ThawaniPayment;
 
 ```
+## Payment Gateway Field
+#####[ amount,currency,user_id,user_first_name,user_last_name,user_email,user_phone,source]
+            
+| Payment Gateway | Required Field 
+| :--- :       |     :---:     
+| **PayPal**   | *amount*     
+| **Stripe**     | *amount , currency*   
+| **Bank Of Palestine ( BOP )**    | *amount , currency* 
+| **Bill.ps**     | *amount , currency , user_first_name , user_last_name , user_email , user_phone*
+| **Thawani**     |  *amount  , user_first_name , user_last_name , user_email , user_phone*
 
 ## Test Cards
 
